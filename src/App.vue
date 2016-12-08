@@ -1,0 +1,172 @@
+<template>
+  <div id="app">
+    <a class="back" data-path="">
+      <img class="bf" src="./assets/images/new_back.png"/>
+    </a>
+    <div class="title"></div>
+    <div class="upload">上传</div>
+    <div class="send" data-action="send">
+      <img src="./assets/images/new_send.png"/>
+    </div>
+    <div class="layout">
+      <div class="header-wrap"></div>
+      <div class="search-wrap">
+        <img class="icon-search" src="./assets/images/search.png"/>
+        <input name="search" class="search-input" />
+      </div>
+      <home></home>
+    </div>
+  </div>
+</template>
+<script>
+import Home from './components/Home'
+
+export default {
+  name: 'app',
+  components: {
+    Home
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+#tongbupan-gap {
+  width: 100%;
+  height: 10px;
+  background-color: #00bbd1;
+}
+#tongbupan {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.header-wrap{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.mod-header {
+  background-color: #f8f8f8; /*#00bbd1;*/
+  height: 0.53rem;/*0.48rem;*/
+  line-height: 0.53rem;/*0.48rem;*/
+  position: relative;
+  padding: 0 10px;
+  font-size: 0.154rem;
+  border-top: 1px solid #b2b2b2;
+}
+
+.mod-header .back {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 25%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mod-header .title {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  color: #fff;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.154rem;
+}
+
+.mod-header .upload {
+  color: #fff;
+  width: 25%;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.mod-header .send {
+  color: #fff;
+  height: 0.48rem;
+  width: 25%;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.mod-header .send img{
+  height: 0.18rem;
+  width: 0.18rem;
+  margin-right: 0.32rem;
+}
+.auth-wrap {
+  height: 0.3rem;
+  background-color: #efeff1;
+  padding: 0.05rem;
+  position: relative;
+  border-bottom: 1px solid #EEEEEE;
+}
+.auth-wrap .auth-input{
+  height: 0.3rem;
+  border: 1px #DADADA solid;
+  border-radius: 0.2rem;
+  width: 100%;
+  font-size: 0.15rem;
+  padding-left: 0.3rem;
+  -webkit-appearance: none;
+}
+.search-wrap {
+  height: 0.3rem;
+  background-color: #efeff1;
+  padding: 0.05rem;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+  z-index: 2;
+}
+
+.search-wrap .icon-search {
+  position: absolute;
+  top: 0.12rem;
+  left: 0.14rem;
+  width: 0.15rem;
+  height: 0.15rem;
+}
+
+.search-wrap .search-input {
+  height: 0.3rem;
+  border: 1px #dadada solid;
+  border-radius: 0.05rem;
+  width: 100%;
+  font-size: 0.15rem;
+  padding-left: 0.3rem;
+  -webkit-appearance:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
