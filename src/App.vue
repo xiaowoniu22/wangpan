@@ -1,22 +1,25 @@
 <template>
-  <div id="app">
-    <a class="back" data-path="">
-      <img class="bf" src="./assets/images/new_back.png"/>
-    </a>
-    <div class="title"></div>
-    <div class="upload">上传</div>
-    <div class="send" data-action="send">
-      <img src="./assets/images/new_send.png"/>
-    </div>
+<div id="app">
     <div class="layout">
-      <div class="header-wrap"></div>
+      <div class="header-wrap">
+        <div class="mod-header">
+          <a class="back" data-path="">
+            <img class="goback" src="./assets/images/new_back.png"/>
+          </a>
+          <div class="title">文件管理</div>
+          <div class="upload">上传</div>
+          <div class="send" data-action="send">
+            <img src="./assets/images/new_send.png"/>
+          </div>
+        </div>
+      </div>
       <div class="search-wrap">
         <img class="icon-search" src="./assets/images/search.png"/>
         <input name="search" class="search-input" />
       </div>
       <home></home>
     </div>
-  </div>
+</div>
 </template>
 <script>
 import Home from './components/Home'
@@ -34,9 +37,12 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
 }
 #tongbupan-gap {
   width: 100%;
@@ -51,19 +57,11 @@ export default {
   position: relative;
 }
 
-.header-wrap{
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  z-index: 1;
-}
 .mod-header {
-  background-color: #f8f8f8; /*#00bbd1;*/
-  height: 0.53rem;/*0.48rem;*/
-  line-height: 0.53rem;/*0.48rem;*/
+  background-color: #00bbd1;
+  height: 0.48rem;
+  line-height: 0.48rem;
   position: relative;
-  padding: 0 10px;
   font-size: 0.154rem;
   border-top: 1px solid #b2b2b2;
 }
@@ -77,7 +75,13 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.mod-header .back .goback{
+    width: 0.154rem;
+    height: 0.154rem;
+    position: relative;
+    top: 0.03rem;
+    padding-left: 0.05rem;
+}
 .mod-header .title {
   display: inline-block;
   width: 50%;

@@ -1,6 +1,6 @@
 <template>
     <div>
-       <div class="doc-filter-wrap">      
+       <div class="doc-filter-wrap">
            <div class="filter-item" data-filter="myfile">
                <img class="icon-filter" src="../assets/images/personal.png" />
                我的文件
@@ -17,7 +17,7 @@
            <div class="filter-item" data-filter="favorite">
                <img class="icon-filter" src="../assets/images/star.png" />
                星标文件
-           </div>    
+           </div>
            <div class="filter-item" data-filter="myshare">
                <img class="icon-filter" src="../assets/images/myshare.png" />
                我的共享文件夹
@@ -45,6 +45,15 @@
     </div>
 </template>
 <style>
+    .doc-filter-wrap {
+        position: absolute;
+        top: 0.88rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
     .doc-filter-wrap .filter-item {
         border-bottom: 1px solid #efefef;
         height: 0.5rem;
@@ -60,16 +69,6 @@
         margin-left: 0.2rem;
         margin-right: 20px;
         vertical-align: middle;
-    }
-
-    .doc-filter-wrap {
-        position: absolute;
-        top: 0.4rem;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
     }
 
     .doc-filter-wrap .filter-divide {

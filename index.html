@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html style="font-size: 200px">
+<html>
   <head>
     <meta charset="utf-8">
     <title>haha</title>
     <link rel="stylesheet" href="../static/normalize.css"/>
-    <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/flexible/flexible.js"></script>
+    <!--<script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/flexible/flexible.js"></script>-->
+    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+    <script>
+      $(function(){
+        // 页面适配
+        function windowResize(){
+          var size = $(this).width();
+          if (size < 640) {
+            $('html').css('font-size', size/3.2);
+            $('body').removeClass('g-maxbody');
+          } else {
+            $('html').css('font-size', 640/3.2);
+            $('body').addClass('g-maxbody');
+          }
+        }
+        $(window).resize(function() {
+          windowResize();
+        });
+        windowResize();
+      });
+    </script>
   </head>
   <body class="g-maxbody">
     <div id="app"></div>
