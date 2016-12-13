@@ -3,7 +3,7 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var webpack = require('webpack')
-
+var svgoConfig = require('./svgo-config.json')
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
 // various preprocessor loaders added to vue-loader at the end of this file
@@ -42,6 +42,12 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.svg$/,
+        loader: 'svgo?' + JSON.stringify(svgoConfig)
+      }
+    ],
     loaders: [
       {
         test: /\.vue$/,
@@ -72,6 +78,11 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite',
+        include: /assets\/icons/
       }
     ]
   },
