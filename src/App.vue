@@ -23,11 +23,13 @@
 </template>
 <script>
 import Home from './components/Home'
+import List from './components/List'
 
 export default {
   name: 'app',
   components: {
-    Home
+    Home,
+    List
   }
 }
 </script>

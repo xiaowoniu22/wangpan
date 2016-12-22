@@ -1,7 +1,7 @@
 <template>
     <div>
        <div class="doc-filter-wrap">
-           <div class="filter-item" data-filter="myfile">
+           <div class="filter-item" data-filter="myfile" @click="showList">
                <img class="icon-filter" src="../assets/images/personal.png" />
                我的文件
            </div>
@@ -119,3 +119,15 @@
     }
 
 </style>
+<script>
+import Vue from 'vue'
+
+new Vue({
+  el: '.doc-filter-wrap',
+  methods: {
+    showList: function (event) {
+      alert('hello')
+    }
+  }
+})
+</script>
