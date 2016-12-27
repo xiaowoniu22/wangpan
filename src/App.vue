@@ -17,19 +17,27 @@
         <img class="icon-search" src="./assets/images/search.png"/>
         <input name="search" class="search-input" />
       </div>
-      <home></home>
+      <component v-bind:is="currentView" :current-View="currentView"></component>
     </div>
 </div>
 </template>
 <script>
 import Home from './components/Home'
-import List from './components/List'
+
 
 export default {
   name: 'app',
+  data () {
+    return {
+      currentView: 'Home'
+    }
+  },
+  onViewChange(val){
+    alert(val);
+    this.myView = val;//④外层调用组件方注册变更方法，将组件内的数据变更，同步到组件外的数据状态中
+  },
   components: {
-    Home,
-    List
+    Home
   }
 }
 </script>

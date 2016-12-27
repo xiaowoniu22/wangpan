@@ -120,14 +120,28 @@
 
 </style>
 <script>
-import Vue from 'vue'
+import List from './List'
 
-new Vue({
-  el: '.doc-filter-wrap',
-  methods: {
-    showList: function (event) {
-      alert('hello')
+export default {
+    props: ['currentView'],
+    data: function () {
+       return {
+          myView: this.currentView//data中新增字段
+       };
+    },
+    watch:{
+      myView(val){
+        this.$emit("on-view-change",val);//③组件内对myResult变更后向外部发送事件通知
+       }
+    },
+    methods: {
+      showList: function (event) {
+        this.myView = 'List'
+      }
+    },
+    components: {
+       List
     }
-  }
-})
+
+}
 </script>
