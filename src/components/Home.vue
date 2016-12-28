@@ -130,9 +130,12 @@ export default {
        };
     },
     watch:{
+      currentView(val){
+          this.myView = val;//新增result的watch，监听变更并同步到myResult上
+      },
       myView(val){
-        this.$emit("on-view-change",val);//③组件内对myResult变更后向外部发送事件通知
-       }
+          this.$emit("on-view-change",val);//③组件内对myResult变更后向外部发送事件通知
+      }
     },
     methods: {
       showList: function (event) {

@@ -17,12 +17,13 @@
         <img class="icon-search" src="./assets/images/search.png"/>
         <input name="search" class="search-input" />
       </div>
-      <component v-bind:is="currentView" :current-View="currentView"></component>
+      <component v-bind:is="currentView" :currentView="currentView" @on-view-change="onViewChange"></component>
     </div>
 </div>
 </template>
 <script>
 import Home from './components/Home'
+import List from './components/List'
 
 
 export default {
@@ -32,12 +33,13 @@ export default {
       currentView: 'Home'
     }
   },
-  onViewChange(val){
-    alert(val);
-    this.myView = val;//④外层调用组件方注册变更方法，将组件内的数据变更，同步到组件外的数据状态中
+  methods: {
+    onViewChange(val){
+      this.currentView = val;//④外层调用组件方注册变更方法，将组件内的数据变更，同步到组件外的数据状态中
+    },
   },
   components: {
-    Home
+    Home,List
   }
 }
 </script>
