@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="list">
        <div class="doc-filter-wrap">
            <div class="filter-item" data-filter="myfile" @click="showList">
                <img class="icon-filter" src="../assets/images/personal.png" />
@@ -46,8 +46,8 @@
 </template>
 <style>
     .doc-filter-wrap {
-        position: absolute;
-        top: 0.88rem;
+        position: relative;
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;

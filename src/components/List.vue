@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="list">
   <div class="doc-list-wrap" style="display: block;" >
     <div class="doc-item" v-for="list in lists">
       <span class="checkbox "></span>
@@ -29,10 +29,10 @@ export default {
 <style>
 .doc-list-wrap {
     display: none;
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
-    top: 0.88rem;
+    top: 0;
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;

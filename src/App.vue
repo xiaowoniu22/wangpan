@@ -3,7 +3,7 @@
     <div class="layout">
       <div class="header-wrap">
         <div class="mod-header">
-          <a class="back" data-path="">
+          <a class="back" data-path="" @click="show">
             <img class="goback" src="./assets/images/new_back.png"/>
           </a>
           <div class="title">文件管理</div>
@@ -17,7 +17,9 @@
         <img class="icon-search" src="./assets/images/search.png"/>
         <input name="search" class="search-input" />
       </div>
-      <component v-bind:is="currentView" :currentView="currentView" @on-view-change="onViewChange"></component>
+      <transition name="slide">
+        <component v-bind:is="currentView" :currentView="currentView" @on-view-change="onViewChange" ></component>
+      </transition>
     </div>
 </div>
 </template>
@@ -34,6 +36,9 @@ export default {
     }
   },
   methods: {
+    show(){
+        this.currentView = this.currentView === 'List' ? 'Home' : 'List'
+    },
     onViewChange(val){
       this.currentView = val;//④外层调用组件方注册变更方法，将组件内的数据变更，同步到组件外的数据状态中
     },
@@ -171,9 +176,24 @@ export default {
   -webkit-appearance:none;
 }
 
+ .layout{
+    position:relative;
+    height:100%;
+}
+ .layout .list{
+    height:100%;
+ }
+.slide-enter-active{
+  transition: transform .8s ease;
+}
 
+.slide-enter {
+  transform: translate3d(100%, 0, 0);
+}
 
-
+.slide-leave {
+  transform: translate3d(-100%, 0, 0);
+}
 
 
 
